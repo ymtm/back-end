@@ -6,7 +6,7 @@ const methodOverride = require('method-override');
 
 const app = express();
 
-const consumerController = require('./controllers/consumersController');
+const clintController = require('./controllers/clintController');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   res.send('Hey');
 })
 
-app.use('/consumer',consumerController);
+app.use('/clint',clintController);
 // ADD YOUR CONTROLLER HERE!!!
 
 
