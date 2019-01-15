@@ -6,7 +6,8 @@ const methodOverride = require('method-override');
 
 const app = express();
 
-const consumerController = require('./controllers/consumersController');
+const clintController = require('./controllers/clientController');
+const companyController = require('./controllers/companiesController');
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -17,12 +18,12 @@ app.get('/', (req, res) => {
   res.send('Hey');
 })
 
-app.use('/consumer',consumerController);
+app.use('/client',clintController);
+app.use('/companies',companyController);
 // ADD YOUR CONTROLLER HERE!!!
-
 
 app.listen(port, () => {
   console.log('---------------------------------------');
   console.log('Express listening on localhost:' + port);
   console.log('---------------------------------------');
-});
+}); 
