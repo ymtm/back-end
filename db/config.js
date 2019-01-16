@@ -6,7 +6,7 @@ var config = {
   host: 'localhost',
   port: 5432,
   database: 'maintenance_db',
-  user: 'yahyamo.' // your username here!!
+  user: 'muneerabinbaz' // your username here!!
 }
 
 var connection = pgInstance(config);
