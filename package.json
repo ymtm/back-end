@@ -22,5 +22,6 @@
   "bugs": {
     "url": "https://github.com/ymtm/back-end/issues"
   },
-  "homepage": "https://github.com/ymtm/back-end#readme"
+  "homepage": "https://github.com/ymtm/back-end#readme",
+  "keywords": []
 }
