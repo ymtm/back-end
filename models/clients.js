@@ -16,7 +16,6 @@ client.getAll = (req, res, next) => {
 }
 
 client.create = (req, res, next) => {
-
   console.log('\n\n\n\n\n ************************'  );
   db.one('INSERT INTO clients (client_name, client_type) VALUES ($1, $2) RETURNING *;',[req.body.name, req.body.type])
     .then((data) => {

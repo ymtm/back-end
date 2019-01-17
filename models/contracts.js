@@ -5,7 +5,7 @@ const contract = {};
 
 contract.create = (req, res, next) => {
     console.log('\n\n\n\n\n&&&&&&&&&&&&&&&&&&&&'  );
-    db.one('INSERT INTO contracts (contract_period, contract_status, company_id, client_id, contract_issue_date) VALUES($1,$2,$3,$4,$5) RETURNING *;',[req.body.period, req.body.status, req.body.company_id, req.client_id, new Date()])
+    db.one('INSERT INTO contracts (contract_period, contract_status, company_id, client_id, contract_issue_date) VALUES($1,$2,$3,$4,$5) RETURNING *;',[req.body.period, "Pending", req.body.company_id, req.client_id, new Date()])
     .then((data)=> {
         res.locals.contract = data
         next();
