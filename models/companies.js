@@ -38,6 +38,7 @@ company.byIDwithDetails = (req, res, next) => {
       console.log(error)
       next();
     })
+    
 }
  
 
