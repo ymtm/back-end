@@ -1,10 +1,11 @@
 console.log('here we go');
-require("dontenv").config();
+// require("dontenv").config();
 const express = require('express');
-const port = process.env.DEV_PORT;
+const port = 3000;
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const morgan = require('morgan');
+// const morgan = require('morgan');
+// const SweetAlert = require('react-bootstrap-sweetalert');
 
 const app = express();
 

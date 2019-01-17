@@ -39,5 +39,6 @@ company.byIDwithDetails = (req, res, next) => {
       next();
     })
 }
+ 
 
 module.exports = company;

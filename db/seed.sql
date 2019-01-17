@@ -14,7 +14,7 @@ CREATE TABLE companies (
 CREATE TABLE clients (
     client_id SERIAL PRIMARY KEY,
     client_name VARCHAR,
-    client_type VARCHAR,
+    client_type VARCHAR
 );
 
 
@@ -27,16 +27,15 @@ CREATE TABLE contracts (
     client_id INT NOT NULL,
     foreign key(company_id) references companies,
     foreign key(client_id) references clients
-
 );
 
-CREATE TABLE users(
-  id serial primary key,
-  name varchar NOT NULL,
-  email varchar UNIQUE NOT NULL,
-  password_digest varchar NOT NULL,
-  is_admin boolean DEFAULT 'f'
-);
+-- CREATE TABLE users(
+--   id serial primary key,
+--   name varchar NOT NULL,
+--   email varchar UNIQUE NOT NULL,
+--   password_digest varchar NOT NULL,
+--   is_admin boolean DEFAULT 'f'
+-- );
 
  INSERT INTO companies(comp_name,comp_description,comp_logo) 
  VALUES ('SABACO','Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.','https://www.freeiconspng.com/uploads/company-icon--desktop-business-icons--softiconsm-23.png'),
