@@ -18,7 +18,9 @@ contract.create = (req, res, next) => {
     }
 
     contract.delete = (req,res,next) =>{
-        db.none('DELETE * FROM contracts WHERE company_id =$1 AND client_id = $2;',[req.params.comp_id,req.params.client_id])
+        console.log()
+       
+        db.none('DELETE FROM contracts WHERE company_id =$1 AND client_id = $2;',[req.params.comp_id,req.params.client_id])
         .then(()=>{
 
             next();

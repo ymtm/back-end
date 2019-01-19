@@ -7,7 +7,7 @@ const contract = require('../models/contracts');
 
 
 const sendCompanies = (req, res) => res.json(res.locals.companies);
-const sendClient= (req, res) => res.json(res.locals.newClient);
+// const sendClient= (req, res) => res.json(res.locals.newClient);
 const sendClientAndContract = (req,res) => res.json({clients: res.locals.newClient, contract: res.locals.contract})
 
 router.get('/', company.getAll, sendCompanies);

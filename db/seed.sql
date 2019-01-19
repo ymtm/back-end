@@ -4,17 +4,30 @@ CREATE DATABASE maintenance_db;
 
 \c maintenance_db
 
+
+CREATE TABLE users(
+  id serial primary key,
+  name varchar NOT NULL,
+  email varchar UNIQUE NOT NULL,
+  password_digest varchar NOT NULL,
+  user_type varchar NOT NULL  DEFAULT 'client'
+);
+
 CREATE TABLE companies (
      comp_id SERIAL PRIMARY KEY,
      comp_name VARCHAR,
      comp_description text,
-     comp_logo text
+     comp_logo text,
+     users_id INT , 
+     foreign key(users_id) references users
 );
 
 CREATE TABLE clients (
     client_id SERIAL PRIMARY KEY,
     client_name VARCHAR,
-    client_type VARCHAR
+    client_type VARCHAR,
+    users_id INT , 
+    foreign key(users_id) references users
 );
 
 
@@ -29,13 +42,6 @@ CREATE TABLE contracts (
     foreign key(client_id) references clients
 );
 
--- CREATE TABLE users(
---   id serial primary key,
---   name varchar NOT NULL,
---   email varchar UNIQUE NOT NULL,
---   password_digest varchar NOT NULL,
---   is_admin boolean DEFAULT 'f'
--- );
 
  INSERT INTO companies(comp_name,comp_description,comp_logo) 
  VALUES ('SABACO','Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus.','https://www.freeiconspng.com/uploads/company-icon--desktop-business-icons--softiconsm-23.png'),

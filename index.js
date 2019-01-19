@@ -1,5 +1,5 @@
 console.log('here we go');
-// require("dontenv").config();
+require("dotenv").config();
 const express = require('express');
 const port = 3000;
 const bodyParser = require('body-parser');
@@ -11,8 +11,9 @@ const app = express();
 
 const clientController = require('./controllers/clientController');
 const companyController = require('./controllers/companiesController');
+const authController = require("./controllers/authController");
 
-
+app.use("/api/", authController);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -24,6 +25,7 @@ app.get('/', (req, res) => {
 
 app.use('/client',clientController);
 app.use('/companies',companyController);
+app.use('/auth' ,authController)
 // ADD YOUR CONTROLLER HERE!!!
 
 app.listen(port, () => {
