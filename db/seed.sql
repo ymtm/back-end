@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS maintenance_db;
+-- DROP DATABASE IF EXISTS maintenance_db;
 
-CREATE DATABASE maintenance_db;
+-- CREATE DATABASE maintenance_db;
 
-\c maintenance_db
+-- \c maintenance_db
 
 CREATE TABLE companies (
      comp_id SERIAL PRIMARY KEY,
@@ -50,10 +50,11 @@ CREATE TABLE contracts (
 
   INSERT INTO contracts (contract_period,contract_status,contract_issue_date,company_id,client_id)
   VALUES(6,'Active','2019-01-14',1,1),
-  (6,'Active','2019-01-14',1,2),
+  (6,'Active','2019-01-14',1,2), 
   (6,'Active','2019-01-14',1,3),
   (6,'Pending','2019-01-14',2,4),
   (6,'Expired','2019-01-14',3,5);
+
 
 
  
